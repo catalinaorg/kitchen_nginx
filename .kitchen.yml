@@ -1,0 +1,17 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: test-box
+    driver:
+      box: test-box
+      provider: virtualbox
+
+verifier:
+  name: inspec
+
+suites:
+  - name: default
