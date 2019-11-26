@@ -1,2 +1,2 @@
-# kitchen_nginx
-Kitchen-vagrant test that checks the vagrant virtualbox box have nginx
+# nginx64
+Create a vagrant virtualbox box with nginx
