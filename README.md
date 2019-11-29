@@ -1,8 +1,9 @@
-This repo creates a vagrant virtualbox box (ubuntu 16.04. 06 server), installs nginx and tests if nginx is installed.
+This repo creates a vagrant virtualbox box (ubuntu 16.04.06 server), installs nginx and tests if nginx is installed.
 
 # Pre-req
 * Packer 1.4.5
 * Vagrant 2.2.6
+* VirtualBox
 * rbenv install 2.3.1
 * rbenv local 2.3.1
 * gem install bundler
@@ -27,9 +28,12 @@ This repo creates a vagrant virtualbox box (ubuntu 16.04. 06 server), installs n
    
 1. check if the box is installed into Vagrant `vagrant box list`
 
-1. rename box `vagrant box add --name test-box ubuntu-1604-vbox.box`
+1. add the box locally `vagrant box add --name test-box ubuntu-1604-vbox.box`
 
-1. test if nginx is installed
+1. install Chef on the instance, upload cookbook files and minimal configuration and start Chef run based on kitchen.yml file
    * `bundle exec kitchen converge`
-   * `bundle exec kitchen verify`
+1. execute tests
+   * `bundle exec kitchen verify`   
+1. delete instance
+   * `bundle exec kitchen destroy`
 
